@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psicologia e Fé - Giovana de Morais</title>
+    <style>
+        /* --- Variáveis de Cores (Paleta Terapêutica: Verde Sálvia, Areia e Terracota Suave) --- */
+        :root {
+            --primary: #4A5D54; /* Verde Sálvia Escuro */
+            --secondary: #BFA598; /* Terracota Suave */
+            --bg-light: #F9F7F2; /* Areia Claro */
+            --text-dark: #2C3330;
+            --white: #ffffff;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* --- Tipografia --- */
+        h1, h2, h3 {
+            font-family: 'Georgia', serif; /* Fonte com serifa para dar ar literário/sério */
+            color: var(--primary);
+        }
+
+        /* --- Header / Hero Section --- */
+        header {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: linear-gradient(rgba(74, 93, 84, 0.9), rgba(74, 93, 84, 0.8)), url('https://images.unsplash.com/photo-1499209974431-2761e2523032?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        /* --- Botões (CTA) --- */
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(191, 165, 152, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(191, 165, 152, 0.6);
+            background-color: #a88b7d;
+        }
+
+        .btn-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        /* --- Seções Gerais --- */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* --- Sobre o Livro --- */
+        .book-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .book-cover {
+            flex: 1;
+            min-width: 300px;
+            background-color: #ddd; /* Placeholder para a capa */
+            height: 450px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 0.9rem;
+            /* Retire a linha abaixo quando colocar a imagem real */
+            border: 2px dashed #ccc; 
+        }
+
+        .book-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            display: none; /* Mude para block quando tiver a imagem */
+        }
+
+        .book-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .book-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- Benefícios (Cards) --- */
+        .benefits {
+            background-color: var(--white);
+            border-radius: 20px;
+            padding: 4rem 2rem;
+            box-shadow: var(--shadow);
+            margin-top: -3rem; /* Efeito de sobreposição visual */
+            position: relative;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            padding: 1.5rem;
+            border-left: 4px solid var(--secondary);
+            background: #fafafa;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            background: #fff;
+            transform: translateX(5px);
+            box-shadow: var(--shadow);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- Sobre a Autora --- */
+        .author {
+            text-align: center;
+            background-color: #E8EBE9; /* Verde muito claro */
+            max-width: 100%;
+            padding: 5rem 2rem;
+        }
+
+        .author-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .author-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin: 0 auto 1.5rem;
+            object-fit: cover;
+            border: 4px solid var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        /* --- FAQ / Perguntas --- */
+        .faq details {
+            background-color: var(--white);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .faq summary {
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--primary);
+            color: var(--white);
+            font-size: 0.9rem;
+        }
+
+        /* --- Animações --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(191, 165, 152, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(191, 165, 152, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(191, 165, 152, 0); }
+        }
+
+        /* Responsividade Mobile */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.2rem; }
+            .book-section { flex-direction: column-reverse; }
+            .btn { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="hero-content">
+            <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; opacity: 0.9;">Lançamento Exclusivo</p>
+            <h1>Onde a Psicologia encontra o Sagrado</h1>
+            <p>Descubra como integrar sua fé e sua saúde mental para viver com mais sentido, menos culpa e total responsabilidade emocional. Uma abordagem clínica e humana.</p>
+            <a href="#checkout" onclick="redirectToCheckout()" class="btn btn-pulse">Quero ler o eBook agora</a>
+        </div>
+    </header>
+
+    <section class="book-section">
+        <div class="book-text">
+            <h2>Psicologia e Fé: <br><span style="font-size: 0.7em; color: #666; font-family: 'Helvetica', sans-serif;">Uma abordagem pela Gestalt-terapia</span></h2>
+            <p>Muitas pessoas sentem que precisam escolher entre a terapia e a religião. Ou pior: vivem uma fé baseada no medo e na autopunição.</p>
+            <br>
+            <p>Neste livro digital, a psicóloga <strong>Giovana de Morais</strong> guia você por uma jornada de reconciliação interna. Você vai entender que a sua espiritualidade não é inimiga da sua mente, mas um dos maiores recursos de cura que você possui — quando vivida com liberdade e consciência.</p>
+            <br>
+            <p><strong>Não é sobre religião. É sobre ser humano por inteiro.</strong></p>
+            <br>
+            <a href="#checkout" onclick="redirectToCheckout()" class="btn" style="background-color: var(--primary); font-size: 0.9rem;">Garantir meu exemplar</a>
+        </div>
+        
+        <div class="book-cover">
+            <img src="capa-ebook.jpg" alt="Capa do Ebook Psicologia e Fé" style="display: none;"> <p style="text-align:center; padding: 20px;">[Imagem da Capa do eBook]</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="benefits">
+            <h2 style="text-align: center; margin-bottom: 2rem;">O que você vai descobrir</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>🌱 Do Medo à Liberdade</h3>
+                    <p>Como transformar a culpa religiosa (que pune) em responsabilidade existencial (que liberta e cura).</p>
+                </div>
+                <div class="card">
+                    <h3>🧠 Fé e Ansiedade</h3>
+                    <p>Entenda a diferença entre usar a fé como fuga da realidade e usá-la como suporte para enfrentar a dor.</p>
+                </div>
+                <div class="card">
+                    <h3>💡 Sentido na Dor</h3>
+                    <p>Baseado na visão de Viktor Frankl, aprenda a ressignificar o sofrimento encontrando um propósito maior.</p>
+                </div>
+                <div class="card">
+                    <h3>🤝 No Consultório</h3>
+                    <p>Desmistifique a terapia: saiba como o psicólogo acolhe a sua crença sem julgamentos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="author">
+        <div class="author-container">
+            <img src="foto-giovana.jpg" alt="Giovana de Morais" class="author-img" onerror="this.style.display='none'">
+            <h2>Quem é Giovana de Morais?</h2>
+            <p style="margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Psicóloga formada pela UniCesumar, pós-graduanda em <strong>Gestalt-terapia</strong> e <strong>Neuropsicologia</strong>. 
+                Giovana dedica sua prática clínica a construir pontes entre a ciência e a alma. 
+                Sua missão é ajudar pessoas a integrarem todas as partes de si mesmas — mente, corpo e espírito — em uma vida de autenticidade e sentido.
+            </p>
+        </div>
+    </section>
+
+    <section style="text-align: center;">
+        <h2>Comece sua jornada de integração hoje</h2>
+        <p style="margin: 1rem 0 2rem;">Adquira o eBook completo e receba imediatamente no seu e-mail.</p>
+        
+        <div style="background: #fff; padding: 2rem; border-radius: 10px; display: inline-block; box-shadow: var(--shadow);">
+            <p style="font-size: 0.9rem; text-decoration: line-through; color: #999;">De R$ 97,90</p>
+            <p style="font-size: 2.5rem; font-weight: bold; color: var(--primary); margin: 0.5rem 0;">Por R$ 47,90</p>
+            <p style="font-size: 0.8rem; margin-bottom: 1.5rem;">Oferta de Lançamento</p>
+            
+            <a href="#checkout" onclick="redirectToCheckout()" class="btn btn-pulse" style="width: 100%;">COMPRAR AGORA</a>
+            
+            <div style="margin-top: 1rem; font-size: 0.8rem; color: #666;">
+                🔒 Compra 100% Segura • Acesso Imediato
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Giovana de Morais. Todos os direitos reservados.</p>
+        <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 0.5rem;">Psicologia e Espiritualidade com Ética e Ciência.</p>
+    </footer>
+
+    <script>
+        // --- CONFIGURAÇÃO DO LINK DE VENDA ---
+        // COLOQUE SEU LINK DO HOTMART/EDUZZ/KIWIFY ABAIXO:
+        const LINK_DO_CHECKOUT = "https://pay.hotmart.com/SEU_CODIGO_AQUI"; 
+
+        function redirectToCheckout() {
+            // Verifica se o link foi configurado
+            if(LINK_DO_CHECKOUT.includes("SEU_CODIGO_AQUI")) {
+                alert("Olá! Configure o link de checkout no código HTML (linha do script).");
+            } else {
+                window.location.href = LINK_DO_CHECKOUT;
+            }
+        }
+
+        // Animação simples de Scroll
+        window.addEventListener('scroll', function() {
+            const elements = document.querySelectorAll('.card');
+            elements.forEach(el => {
+                const position = el.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                if(position < screenPosition) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

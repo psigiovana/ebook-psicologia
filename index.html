@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Psicologia e Fé - Giovana de Morais</title>
+    <title>Psicologia e Fé - Psicologa Giovana de Morais</title>
     <style>
         /* --- Variáveis de Cores (Paleta Terapêutica: Verde Sálvia, Areia e Terracota Suave) --- */
         :root {
@@ -107,28 +107,13 @@
             gap: 3rem;
         }
 
-        .book-cover {
-            flex: 1;
-            min-width: 300px;
-            background-color: #ddd; /* Placeholder para a capa */
-            height: 450px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #888;
-            font-size: 0.9rem;
-            /* Retire a linha abaixo quando colocar a imagem real */
-            border: 2px dashed #ccc; 
-        }
 
         .book-cover img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             border-radius: 10px;
-            display: none; /* Mude para block quando tiver a imagem */
+            display: block;
         }
 
         .book-text {
@@ -251,7 +236,7 @@
             <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; opacity: 0.9;">Lançamento Exclusivo</p>
             <h1>Onde a Psicologia encontra o Sagrado</h1>
             <p>Descubra como integrar sua fé e sua saúde mental para viver com mais sentido, menos culpa e total responsabilidade emocional. Uma abordagem clínica e humana.</p>
-            <a href="#checkout" onclick="redirectToCheckout()" class="btn btn-pulse">Quero ler o eBook agora</a>
+            <a href="https://pay.kiwify.com.br/YkoCGAm" onclick="redirectToCheckout()" class="btn btn-pulse">Quero ler o eBook agora</a>
         </div>
     </header>
 
@@ -264,11 +249,11 @@
             <br>
             <p><strong>Não é sobre religião. É sobre ser humano por inteiro.</strong></p>
             <br>
-            <a href="#checkout" onclick="redirectToCheckout()" class="btn" style="background-color: var(--primary); font-size: 0.9rem;">Garantir meu exemplar</a>
+            <a href="https://pay.kiwify.com.br/YkoCGAm" onclick="redirectToCheckout()" class="btn" style="background-color: var(--primary); font-size: 0.9rem;">Garantir meu exemplar</a>
         </div>
         
         <div class="book-cover">
-            <img src="capa-ebook.jpg" alt="Capa do Ebook Psicologia e Fé" style="display: none;"> <p style="text-align:center; padding: 20px;">[Imagem da Capa do eBook]</p>
+            <img src="capa-ebook.jpg" alt="Capa do Ebook Psicologia e Fé" style="width: 100%; max-width: 300px; height: auto;"> <p style="text-align:center; padding: 20px;"></p>
         </div>
     </section>
 
@@ -313,11 +298,11 @@
         <p style="margin: 1rem 0 2rem;">Adquira o eBook completo e receba imediatamente no seu e-mail.</p>
         
         <div style="background: #fff; padding: 2rem; border-radius: 10px; display: inline-block; box-shadow: var(--shadow);">
-            <p style="font-size: 0.9rem; text-decoration: line-through; color: #999;">De R$ 97,90</p>
-            <p style="font-size: 2.5rem; font-weight: bold; color: var(--primary); margin: 0.5rem 0;">Por R$ 47,90</p>
+            <p style="font-size: 0.9rem; text-decoration: line-through; color: #999;">De R$ 47,90</p>
+            <p style="font-size: 2.5rem; font-weight: bold; color: var(--primary); margin: 0.5rem 0;">Por R$ 14,90</p>
             <p style="font-size: 0.8rem; margin-bottom: 1.5rem;">Oferta de Lançamento</p>
             
-            <a href="#checkout" onclick="redirectToCheckout()" class="btn btn-pulse" style="width: 100%;">COMPRAR AGORA</a>
+            <a href="https://pay.kiwify.com.br/YkoCGAm" onclick="redirectToCheckout()" class="btn btn-pulse" style="width: 100%;">COMPRAR AGORA</a>
             
             <div style="margin-top: 1rem; font-size: 0.8rem; color: #666;">
                 🔒 Compra 100% Segura • Acesso Imediato
@@ -326,14 +311,14 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 Giovana de Morais. Todos os direitos reservados.</p>
+        <p>&copy; 2026 AzDev Coder. Todos os direitos reservados.</p>
         <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 0.5rem;">Psicologia e Espiritualidade com Ética e Ciência.</p>
     </footer>
 
     <script>
         // --- CONFIGURAÇÃO DO LINK DE VENDA ---
         // COLOQUE SEU LINK DO HOTMART/EDUZZ/KIWIFY ABAIXO:
-        const LINK_DO_CHECKOUT = "https://pay.hotmart.com/SEU_CODIGO_AQUI"; 
+        const LINK_DO_CHECKOUT = "https://pay.kiwify.com.br/YkoCGAm"; 
 
         function redirectToCheckout() {
             // Verifica se o link foi configurado
